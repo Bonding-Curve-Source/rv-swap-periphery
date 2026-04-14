@@ -1,14 +1,14 @@
 {
-  "name": "@uniswap/v2-periphery",
+  "name": "@ravi/v2-periphery",
   "version": "1.1.0-beta.0",
-  "description": "🎚 Peripheral smart contracts for interacting with Uniswap V2",
+  "description": "🎚 Peripheral smart contracts for RAVI V2",
   "engines": {
     "node": ">=10"
   },
-  "homepage": "https://uniswap.org",
+  "homepage": "https://github.com/Bonding-Curve-Source/rv-swap-periphery",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/uniswap-v2-periphery"
+    "url": "https://github.com/Bonding-Curve-Source/rv-swap-periphery"
   },
   "files": [
     "build",
@@ -16,9 +16,11 @@
   ],
   "dependencies": {
     "@uniswap/lib": "4.0.1-alpha",
-    "@uniswap/v2-core": "1.0.0"
+    "@ravi/v2-core": "file:../v2-core"
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^5.7.2",
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
@@ -33,6 +35,9 @@
     "typescript": "^3.7.3"
   },
   "scripts": {
+    "deploy": "yarn deploy:router02",
+    "deploy:router02": "ts-node scripts/deploy-router02.ts",
+    "add-liquidity": "ts-node scripts/add-liquidity-native-token.ts",
     "lint": "yarn prettier ./test/*.ts --check",
     "lint:fix": "yarn prettier ./test/*.ts --write",
     "clean": "rimraf ./build/",

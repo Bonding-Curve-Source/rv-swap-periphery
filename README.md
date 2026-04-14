@@ -1,24 +1,16 @@
-# Uniswap V2
+# RAVI V2 Periphery
 
-[![Actions Status](https://github.com/Uniswap/uniswap-v2-periphery/workflows/CI/badge.svg)](https://github.com/Uniswap/uniswap-v2-periphery/actions)
-[![npm](https://img.shields.io/npm/v/@uniswap/v2-periphery?style=flat-square)](https://npmjs.com/package/@uniswap/v2-periphery)
+Router, libraries, and helpers around **@ravi/v2-core**. Forked from Uniswap V2 periphery with RAVI branding.
 
-In-depth documentation on Uniswap V2 is available at [uniswap.org](https://uniswap.org/docs).
+**Package:** `@ravi/v2-periphery`  
+**Dependency:** `@ravi/v2-core` (via `file:../v2-core` in this monorepo)
 
-The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/browse/@uniswap/v2-periphery@latest/).
+## Local development
 
-# Local Development
+```bash
+yarn
+yarn compile
+yarn test
+```
 
-The following assumes the use of `node@>=10`.
-
-## Install Dependencies
-
-`yarn`
-
-## Compile Contracts
-
-`yarn compile`
-
-## Run Tests
-
-`yarn test`
+Deploy scripts (see `.env.example`): `yarn deploy:router02`, `yarn add-liquidity`.
